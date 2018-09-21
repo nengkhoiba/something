@@ -57,6 +57,7 @@ class Data_controller extends CI_Controller {
 	
 	public function UpdateRole()
 	{
+		
 		$_POST = json_decode(trim(file_get_contents('php://input')), true);
 		try {
 			$role =  $this->input->post('txtRole',true);
@@ -72,7 +73,9 @@ class Data_controller extends CI_Controller {
 				$result=$this->database->UpdateRole($ActionType,$role);
 				if($result['code'] == 1)
 				{
+					$data['result']=$this->database->GetAllActiveRecord('role');
 					$output = array(
+							'html'=>$this->load->view('data_fragment/Role_table',$data, true),
 							'msg'=>'Updated successfully!',
 							'success' =>true
 					);
@@ -93,5 +96,23 @@ class Data_controller extends CI_Controller {
 		}
 		echo json_encode($output);
 	}
-	/*PAGE MANAGER--Nengkhoiba*/
+	public function LoadRole()
+	{
+		try {
+				$data['result']=$this->database->GetAllActiveRecord('role');
+				
+					$output = array(
+							'html'=>$this->load->view('data_fragment/Role_table',$data, true),
+							'success' =>true
+					);
+		} catch (Exception $ex) {
+			$output = array(
+					'msg'=> $ex->getMessage(),
+					'success' => false
+			);
+				
+		}
+		echo json_encode($output);
+	}
+	
 }

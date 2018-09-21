@@ -18,7 +18,7 @@
         <!-- CSS -->
         <link href="<?php echo base_url();?>assets/css/app.min.1.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets/css/app.min.2.css" rel="stylesheet"> 
-        
+        <link href="<?php echo base_url();?>assets/css/app.css" rel="stylesheet"> 
     </head>
     <body data-ma-header="teal">
         <header id="header" class="media">
@@ -100,10 +100,10 @@
                             <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
                         </li>
                         <li>
-                            <a href="#"><i class="zmdi zmdi-settings"></i> Settings</a>
+                            <a href="<?php echo base_url();?>setting"><i class="zmdi zmdi-settings"></i> Settings</a>
                         </li>
                         <li>
-                            <a href="#"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                            <a href="<?php echo base_url();?>"><i class="zmdi zmdi-time-restore"></i> Logout</a>
                         </li>
                     </ul>
                 </li>

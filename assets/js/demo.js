@@ -1,6 +1,4 @@
-$(window).load(function(){
-    //Welcome Message (not for login page)
-    function notify(message, type){
+function notify(message, type){
         $.growl({
             message: message
         },{
@@ -24,11 +22,51 @@ $(window).load(function(){
         });
     };
 
+    function setVelidationWarning(id,msg,type){
+        	if(type=="green"){
+        		$('#'+id).addClass('validation-green');
+            	}else if(type=="blue"){
+            		$('#'+id).addClass('validation-blue');
+                	}else{
+                		$('#'+id).addClass('validation-red');
+                    	}
+        
+			$('#'+id).html(msg);
+        }
+    
+$(window).load(function(){
+    //Welcome Message (not for login page)
+    
     if (!$('.login-content')[0]) {
         notify('Welcome back Nengkhoiba ', 'inverse');
     }
 });
+(function($){
+	  $.fn.serializeObject = function () {
+	    "use strict";
 
+	    var result = {};
+	    var extend = function (i, element) {
+	      var node = result[element.name];
+
+	  // If node with same name exists already, need to convert it to an array as it
+	  // is a multi-value field (i.e., checkboxes)
+
+	      if ('undefined' !== typeof node && node !== null) {
+	        if ($.isArray(node)) {
+	          node.push(element.value);
+	        } else {
+	          result[element.name] = [node, element.value];
+	        }
+	      } else {
+	        result[element.name] = element.value;
+	      }
+	    };
+
+	    $.each(this.serializeArray(), extend);
+	    return result;
+	  };
+	})(jQuery);
 $(document).ready(function() {
     /*--------------------------------------
         Header Color

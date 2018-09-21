@@ -71,7 +71,7 @@
         <script src="<?php echo base_url();?>assets/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
         <script src="<?php echo base_url();?>assets/js/flot-charts/curved-line-chart.js"></script>
         <script src="<?php echo base_url();?>assets/js/flot-charts/line-chart.js"></script>
-
+		<script src="<?php echo base_url();?>assets/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
         <!-- Placeholder for IE9 -->
         <!--[if IE 9 ]>
         <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
@@ -82,6 +82,8 @@
         <script src="<?php echo base_url();?>assets/js/functions.js"></script>
         <script src="<?php echo base_url();?>assets/js/actions.js"></script>
         <script src="<?php echo base_url();?>assets/js/demo.js"></script>
+         
+        <script src="<?php echo base_url();?>assets/js/dragula.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 		<script>
 		  // Initialize Firebase

@@ -29,7 +29,7 @@ class Data_model extends CI_Model{
 	function GetAllActiveRecord($tabName)  
 	{  
 	   //data is retrive from this query  
-	    $query = $this->db->get_where($tabName, array('IsActive' => 1)); 
+	    $query = $this->db->get_where($tabName, array('Com_id'=>$GLOBALS['ComId'],'IsActive' => 1)); 
 	    return $query->result_array();  
 	} 
 	function GetRecordById($id,$tabName)  
@@ -88,6 +88,7 @@ class Data_model extends CI_Model{
 		}
 		
 	}
+	
 
 }
     
